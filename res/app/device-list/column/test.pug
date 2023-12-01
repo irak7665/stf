@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title 测试表单
+  body
+    h1 测试表单
+    form(action="/submit-form" method="post")
+      .form-group
+        label(for="name") 姓名：
+        input#name(type="text" name="name")
+      .form-group
+        label(for="email") 邮箱：
+        input#email(type="email" name="email")
+      .form-group
+        label(for="message") 消息：
+        textarea#message(name="message")
+      button(type="submit") 提交

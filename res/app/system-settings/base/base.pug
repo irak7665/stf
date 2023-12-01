@@ -1,0 +1,53 @@
+
+.widget-container.fluid-height(ng-controller='BaseCtrl')
+  .heading
+    span(translate) System Settings
+  .widget-content.padded
+    .form-horizontal
+      span(translate) 添加好友时间间隔
+      .form-group
+        .input-group
+          .input-group-addon.input-sm
+            i.fa.fa-user
+          input.form-control.input-sm( type='text' placeholder='请输入' ng-model='defaultData.interval')
+      span(translate) 批次数量
+      .form-group
+        .input-group
+          .input-group-addon.input-sm
+            i.fa.fa-tasks
+          input.form-control.input-sm( type='text' placeholder='请输入' ng-model='defaultData.pagesize')
+      span(translate) 循环时长
+      .form-group
+        .input-group
+          .input-group-addon.input-sm
+            i.fa.fa-refresh
+          input.form-control.input-sm( type='text' placeholder='请输入' ng-model='defaultData.loop_message_time')
+      span(translate) 对聊频率
+        .form-group
+          .input-group
+            .input-group-addon.input-sm
+              i.fa.fa-user
+            input.form-control.input-sm( type='text' placeholder='请输入' ng-model='defaultData.wait_message_time')
+      span(translate) 打招呼内容
+      .form-group
+        .input-group
+          .input-group-addon.input-sm
+            i.fa.fa-align-justify
+          textarea.form-control.input-sm( type='text' placeholder='请输入' ng-model='defaultData.init_message')
+       span(translate) 添加联系人开关
+       .form-group
+         .input-group
+         label
+           input(type='checkbox', ng-model='defaultData.add_contact_flag', ng-change='switchChange()')
+           span(ng-if='defaultData.add_contact_flag') 开启
+           span(ng-if='!defaultData.add_contact_flag') 关闭
+      //- span(translate) 全局应用
+      //- .form-group
+      //-   .input-group
+      //-   label
+      //-     input(type='checkbox', ng-model='defaultData.globalApplication', ng-change='switchChange()')
+      //-     span(ng-if='defaultData.globalApplication') 开启
+      //-     span(ng-if='!defaultData.globalApplication') 关闭
+      .form-group
+        .col-md-offset-0.col-md-10
+          button.btn.btn-primary(type='button' ng-click='submitForm()') Submit

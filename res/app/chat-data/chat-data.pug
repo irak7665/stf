@@ -1,0 +1,14 @@
+.widget-container.fluid-height(ng-controller='SetChatdataCtrl')
+  .heading
+    span(translate) SetChatData
+  .widget-content.padded
+    .form-horizontal
+      .form-group
+        .input-group
+          .input-group-addon.input-sm
+            i.fa.fa-user(
+              tooltip-placement='auto top-right' tooltip-popup-delay='500')
+          textarea.form-control.input-sm( type='text' placeholder='请输入' ng-attr-rows=10 ng-model='defaultData')
+      .form-group
+        .col-md-offset-0.col-md-10
+          button.btn.btn-primary(type='button' ng-click='submitForm()') Submit
